@@ -44,7 +44,8 @@
 // require('dotenv').config();
 // const { MNEMONIC, PROJECT_ID } = process.env;
 
-// const HDWalletProvider = require('@truffle/hdwallet-provider');
+const HDWalletProvider = require('@truffle/hdwallet-provider');
+MNEMONIC = 'alert pond glare curtain recipe material mystery love cause valley scrap friend'
 
 module.exports = {
   /**
@@ -63,6 +64,15 @@ module.exports = {
       port: 7545,
       network_id: "*",
       websocket: true,
+    },
+    sepolia: {
+      provider: () => new HDWalletProvider(MNEMONIC, `https://sepolia.infura.io/v3/e9fcb098969142aeabe181ca961b6f8e`),
+      network_id: 11155111,
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true,
+      gas: 8500000,
+      gasPrice: 20000000000,
     },
     // Useful for testing. The `development` name is special - truffle uses it by default
     // if it's defined here and no other network is specified at the command line.

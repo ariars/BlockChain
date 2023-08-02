@@ -128,8 +128,10 @@ initContract: function() {
 	
   listenToEvents: function() {
     App.contracts.RealEstate.deployed().then(function(instance){
+
+      App.loadRealEstates();
+
       instance.LogBuyRealEstate({fromBlock:0, toBlock:"latest"}, function(error, event){ 
-        debugger;
         if(!error){
           $('#events').append('<p>' + event.args._buyer + ' 계정에서 ' + event.args._id + ' 번 매물을 매입했습니다.</p>')
         }
