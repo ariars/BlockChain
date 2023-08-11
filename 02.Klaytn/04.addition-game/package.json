@@ -1,0 +1,29 @@
+{
+  "name": "klay-dapp-boilerplate",
+  "version": "0.0.1",
+  "description": "boilerplate for klaytn-based app",
+  "main": "truffle.js",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack-dev-server"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true
+    }
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^11.0.0",
+    "eslint": "^8.46.0",
+    "truffle-hdwallet-provider-klaytn": "^1.4.2",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "dependencies": {
+    "buffer": "^6.0.3",
+    "caver-js": "^1.10.2",
+    "spin.js": "^4.1.1"
+  }
+}
